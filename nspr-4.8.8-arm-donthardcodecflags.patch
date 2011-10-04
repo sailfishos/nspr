@@ -1,0 +1,38 @@
+Enable build for MeeGo on ARM
+
+Based on Carsten Munk <carsten@maemo.org>'s previous patch for 4.8.7.
+
+Signed-off-by: Yan Li <yan.i.li@intel.com>
+---
+diff -Nur nspr-4.8.8.orig/mozilla/nsprpub/configure nspr-4.8.8/mozilla/nsprpub/configure
+--- nspr-4.8.8.orig/mozilla/nsprpub/configure	2011-05-05 06:26:56.000000000 +0800
++++ nspr-4.8.8/mozilla/nsprpub/configure	2011-07-06 19:37:16.818175417 +0800
+@@ -3101,9 +3101,9 @@
+   case "$target_cpu" in
+     arm*)
+       if test "$GNU_CC"; then
+-        CFLAGS="$CFLAGS -march=armv7-a -mthumb"
+-        CXXFLAGS="$CXXFLAGS -march=armv7-a -mthumb"
+-        ASFLAGS="$ASFLAGS -march=armv7-a -mthumb"
++        CFLAGS="$CFLAGS"
++        CXXFLAGS="$CXXFLAGS"
++        ASFLAGS="$ASFLAGS"
+       else
+         { echo "configure: error: --enable-thumb2 is not supported for non-GNU toolchains" 1>&2; exit 1; }
+       fi
+diff -Nur nspr-4.8.8.orig/mozilla/nsprpub/configure.in nspr-4.8.8/mozilla/nsprpub/configure.in
+--- nspr-4.8.8.orig/mozilla/nsprpub/configure.in	2011-05-04 22:16:21.000000000 +0800
++++ nspr-4.8.8/mozilla/nsprpub/configure.in	2011-07-06 19:37:37.222176436 +0800
+@@ -925,9 +925,9 @@
+   case "$target_cpu" in
+     arm*)
+       if test "$GNU_CC"; then
+-        CFLAGS="$CFLAGS -march=armv7-a -mthumb"
+-        CXXFLAGS="$CXXFLAGS -march=armv7-a -mthumb"
+-        ASFLAGS="$ASFLAGS -march=armv7-a -mthumb"
++        CFLAGS="$CFLAGS"
++        CXXFLAGS="$CXXFLAGS"
++        ASFLAGS="$ASFLAGS"
+       else
+         AC_MSG_ERROR([--enable-thumb2 is not supported for non-GNU toolchains])
+       fi
