@@ -12,6 +12,7 @@ Source2:        nspr-config-vars.in
 
 Patch1:         nspr-config-pc.patch
 Patch3:		nspr-4.8.8-arm-donthardcodecflags.patch
+Patch4:		nspr-4.8.8-notimestamping.patch
 
 %description
 NSPR provides platform independence for non-GUI operating system 
@@ -42,6 +43,7 @@ Header files for doing development with the Netscape Portable Runtime.
 cp ./mozilla/nsprpub/config/nspr-config.in ./mozilla/nsprpub/config/nspr-config-pc.in
 %patch1 -p0
 %patch3 -p1
+%patch4 -p1
 
 cp %{SOURCE2} ./mozilla/nsprpub/config/
 
