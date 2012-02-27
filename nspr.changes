@@ -1,3 +1,8 @@
+* Mon Feb 27 2012 Marko Saukko <marko.saukko@gmail.com> - 4.9
+- Fixes MER#59: Update to newer version, i.e., 4.9
+- Rebased nspr-config-pc.patch
+- Changed nspr-4.8.8-arm-donthardcodecflags.patch to nspr-4.9-arm-dont-guess-thumb.patch
+
 * Fri Nov 25 2011 Carsten Munk <carsten@merproject.org> - 4.8.8
 - Don't add timestamps, causes a lot of rebuilds.
 

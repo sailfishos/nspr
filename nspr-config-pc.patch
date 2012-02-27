@@ -1,6 +1,8 @@
---- mozilla/nsprpub/config/nspr-config-pc.in.x123	2005-05-11 02:53:41.000000000 +0200
-+++ mozilla/nsprpub/config/nspr-config-pc.in	2006-05-24 20:52:12.000000000 +0200
-@@ -98,7 +98,7 @@
+diff --git a/mozilla/nsprpub/config/nspr-config.in b/mozilla/nsprpub/config/nspr-config.in
+index a7d2b4f..2f441be 100755
+--- a/mozilla/nsprpub/config/nspr-config.in
++++ b/mozilla/nsprpub/config/nspr-config.in
+@@ -98,7 +98,7 @@ if test -z "$includedir"; then
      includedir=@includedir@
  fi
  if test -z "$libdir"; then
@@ -9,7 +11,7 @@
  fi
  
  if test "$echo_prefix" = "yes"; then
-@@ -132,12 +132,12 @@
+@@ -132,12 +132,12 @@ if test "$echo_libs" = "yes"; then
        if test -n "$lib_nspr"; then
  	libdirs="$libdirs -lnspr${major_version}"
        fi
@@ -24,25 +26,29 @@
 +      echo $libdirs `pkg-config --variable=os_libs nspr`
  fi      
  
---- mozilla/nsprpub/configure.in.x123	2006-05-24 20:52:12.000000000 +0200
-+++ mozilla/nsprpub/configure.in	2006-05-24 20:53:53.000000000 +0200
-@@ -2667,6 +2667,8 @@
- config/nsprincl.mk
- config/nsprincl.sh
- config/nspr-config
-+config/nspr-config-pc
-+config/nspr-config-vars
- lib/Makefile 
- lib/ds/Makefile 
- lib/libc/Makefile 
---- mozilla/nsprpub/configure.x123	2006-05-24 20:52:12.000000000 +0200
-+++ mozilla/nsprpub/configure	2006-05-24 20:54:05.000000000 +0200
-@@ -5899,6 +5899,8 @@
- config/nsprincl.mk
- config/nsprincl.sh
- config/nspr-config
-+config/nspr-config-pc
-+config/nspr-config-vars
- lib/Makefile 
- lib/ds/Makefile 
- lib/libc/Makefile 
+diff --git a/mozilla/nsprpub/configure b/mozilla/nsprpub/configure
+index f06d9dd..043e34e 100755
+--- a/mozilla/nsprpub/configure
++++ b/mozilla/nsprpub/configure
+@@ -6694,6 +6694,8 @@ MAKEFILES="
+     config/nsprincl.mk
+     config/nsprincl.sh
+     config/nspr-config
++    config/nspr-config-pc
++    config/nspr-config-vars
+     lib/Makefile
+     lib/ds/Makefile
+     lib/libc/Makefile
+diff --git a/mozilla/nsprpub/configure.in b/mozilla/nsprpub/configure.in
+index 112ddd2..9feebe0 100644
+--- a/mozilla/nsprpub/configure.in
++++ b/mozilla/nsprpub/configure.in
+@@ -3357,6 +3357,8 @@ MAKEFILES="
+     config/nsprincl.mk
+     config/nsprincl.sh
+     config/nspr-config
++    config/nspr-config-pc
++    config/nspr-config-vars
+     lib/Makefile
+     lib/ds/Makefile
+     lib/libc/Makefile

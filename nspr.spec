@@ -1,18 +1,18 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.8.8
+Version:        4.9
 Release:        1
 License:        MPLv1.1 or GPLv2+ or LGPLv2+
 URL:            http://www.mozilla.org/projects/nspr/
 Group:          System/Libraries
 BuildRoot:      %{_tmppath}/%{name}-%{version}-root
-Source0:        https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v%{version}/src/%{name}-%{version}.tar.bz2
+Source0:        https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v%{version}/src/%{name}-%{version}.tar.gz
 Source1:        nspr.pc.in
 Source2:        nspr-config-vars.in
 
 Patch1:         nspr-config-pc.patch
-Patch3:		nspr-4.8.8-arm-donthardcodecflags.patch
-Patch4:		nspr-4.8.8-notimestamping.patch
+Patch2:         nspr-4.9-arm-dont-guess-thumb.patch
+Patch3:         nspr-4.8.8-notimestamping.patch
 
 %description
 NSPR provides platform independence for non-GUI operating system 
@@ -41,9 +41,9 @@ Header files for doing development with the Netscape Portable Runtime.
 # that go into nspr.pc for pkg-config.
 
 cp ./mozilla/nsprpub/config/nspr-config.in ./mozilla/nsprpub/config/nspr-config-pc.in
-%patch1 -p0
+%patch1 -p1
+%patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 cp %{SOURCE2} ./mozilla/nsprpub/config/
 
