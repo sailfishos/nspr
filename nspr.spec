@@ -68,7 +68,7 @@ make
 DESTDIR=$RPM_BUILD_ROOT \
   make install
 
-NSPR_LIBS=`./config/nspr-config --libs`
+NSPR_LIBS=`./config/nspr-config --libdir=%{_libdir} --libs`
 NSPR_CFLAGS=`./config/nspr-config --cflags`
 NSPR_VERSION=`./config/nspr-config --version`
 %{__mkdir_p} $RPM_BUILD_ROOT/%{_libdir}/pkgconfig
