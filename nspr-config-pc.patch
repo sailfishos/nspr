@@ -26,29 +26,3 @@ index a7d2b4f..2f441be 100755
 +      echo $libdirs `pkg-config --variable=os_libs nspr`
  fi      
  
-diff --git a/mozilla/nsprpub/configure b/mozilla/nsprpub/configure
-index f06d9dd..043e34e 100755
---- a/mozilla/nsprpub/configure
-+++ b/mozilla/nsprpub/configure
-@@ -6694,6 +6694,8 @@ MAKEFILES="
-     config/nsprincl.mk
-     config/nsprincl.sh
-     config/nspr-config
-+    config/nspr-config-pc
-+    config/nspr-config-vars
-     lib/Makefile
-     lib/ds/Makefile
-     lib/libc/Makefile
-diff --git a/mozilla/nsprpub/configure.in b/mozilla/nsprpub/configure.in
-index 112ddd2..9feebe0 100644
---- a/mozilla/nsprpub/configure.in
-+++ b/mozilla/nsprpub/configure.in
-@@ -3357,6 +3357,8 @@ MAKEFILES="
-     config/nsprincl.mk
-     config/nsprincl.sh
-     config/nspr-config
-+    config/nspr-config-pc
-+    config/nspr-config-vars
-     lib/Makefile
-     lib/ds/Makefile
-     lib/libc/Makefile

@@ -1,3 +1,9 @@
+* Sat Oct 06 2012 Marko Saukko <marko.saukko@jollamobile.com> - 4.9.2
+- Update to version 4.9.2
+- Contributing to MER#174 by moving libs under /usr/lib
+- Cleanup .pc file handling that is now merged to upstream
+- Enable thumb2 for armv7tnhl
+
 * Mon Apr 23 2012 Benjamin Federau <benjamin.federau@basyskom.com> - 4.9
 - Fixes MER#316: pkg-config file nspr.pc contains an empty -L entry
 
