@@ -1,3 +1,6 @@
+* Fri Apr 05 2013 Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com> - 4.9.6
+- Update to version 4.9.6
+
 * Sat Oct 06 2012 Marko Saukko <marko.saukko@jollamobile.com> - 4.9.2
 - Update to version 4.9.2
 - Contributing to MER#174 by moving libs under /usr/lib
