@@ -1,6 +1,6 @@
-diff -ru nspr-4.8.8/mozilla/nsprpub/lib/ds/Makefile.in nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/ds/Makefile.in
---- nspr-4.8.8/mozilla/nsprpub/lib/ds/Makefile.in	2009-08-04 20:07:33.000000000 +0200
-+++ nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/ds/Makefile.in	2011-11-25 20:05:04.775295035 +0100
+diff -ru nspr-4.8.8/nspr/lib/ds/Makefile.in nspr-4.8.8-notimestamping/nspr/lib/ds/Makefile.in
+--- nspr-4.8.8/nspr/lib/ds/Makefile.in	2009-08-04 20:07:33.000000000 +0200
++++ nspr-4.8.8-notimestamping/nspr/lib/ds/Makefile.in	2011-11-25 20:05:04.775295035 +0100
 @@ -136,8 +136,8 @@
  TINC = $(OBJDIR)/_pl_bld.h
  PROD = $(notdir $(SHARED_LIBRARY))
@@ -12,10 +12,10 @@ diff -ru nspr-4.8.8/mozilla/nsprpub/lib/ds/Makefile.in nspr-4.8.8-notimestamping
  
  ifeq ($(NS_USE_GCC)_$(OS_ARCH),_WINNT)
  	SUF = i64
-Only in nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/ds: Makefile.in~
-diff -ru nspr-4.8.8/mozilla/nsprpub/lib/libc/src/Makefile.in nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/libc/src/Makefile.in
---- nspr-4.8.8/mozilla/nsprpub/lib/libc/src/Makefile.in	2009-08-04 20:07:34.000000000 +0200
-+++ nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/libc/src/Makefile.in	2011-11-25 20:04:22.242613627 +0100
+Only in nspr-4.8.8-notimestamping/nspr/lib/ds: Makefile.in~
+diff -ru nspr-4.8.8/nspr/lib/libc/src/Makefile.in nspr-4.8.8-notimestamping/nspr/lib/libc/src/Makefile.in
+--- nspr-4.8.8/nspr/lib/libc/src/Makefile.in	2009-08-04 20:07:34.000000000 +0200
++++ nspr-4.8.8-notimestamping/nspr/lib/libc/src/Makefile.in	2011-11-25 20:04:22.242613627 +0100
 @@ -138,8 +138,8 @@
  TINC = $(OBJDIR)/_pl_bld.h
  PROD = $(notdir $(SHARED_LIBRARY))
@@ -27,10 +27,10 @@ diff -ru nspr-4.8.8/mozilla/nsprpub/lib/libc/src/Makefile.in nspr-4.8.8-notimest
  
  ifeq ($(NS_USE_GCC)_$(OS_ARCH),_WINNT)
  	SUF = i64
-Only in nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/libc/src: Makefile.in~
-diff -ru nspr-4.8.8/mozilla/nsprpub/lib/prstreams/Makefile.in nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/prstreams/Makefile.in
---- nspr-4.8.8/mozilla/nsprpub/lib/prstreams/Makefile.in	2010-07-24 00:47:12.000000000 +0200
-+++ nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/prstreams/Makefile.in	2011-11-25 20:04:48.570416411 +0100
+Only in nspr-4.8.8-notimestamping/nspr/lib/libc/src: Makefile.in~
+diff -ru nspr-4.8.8/nspr/lib/prstreams/Makefile.in nspr-4.8.8-notimestamping/nspr/lib/prstreams/Makefile.in
+--- nspr-4.8.8/nspr/lib/prstreams/Makefile.in	2010-07-24 00:47:12.000000000 +0200
++++ nspr-4.8.8-notimestamping/nspr/lib/prstreams/Makefile.in	2011-11-25 20:04:48.570416411 +0100
 @@ -140,8 +140,8 @@
  TINC = $(OBJDIR)/_pl_bld.h
  PROD = $(notdir $(SHARED_LIBRARY))
@@ -42,10 +42,10 @@ diff -ru nspr-4.8.8/mozilla/nsprpub/lib/prstreams/Makefile.in nspr-4.8.8-notimes
  
  ifeq ($(OS_ARCH), WINNT)
  	SUF = i64
-Only in nspr-4.8.8-notimestamping/mozilla/nsprpub/lib/prstreams: Makefile.in~
-diff -ru nspr-4.8.8/mozilla/nsprpub/pr/src/Makefile.in nspr-4.8.8-notimestamping/mozilla/nsprpub/pr/src/Makefile.in
---- nspr-4.8.8/mozilla/nsprpub/pr/src/Makefile.in	2010-10-13 02:52:53.000000000 +0200
-+++ nspr-4.8.8-notimestamping/mozilla/nsprpub/pr/src/Makefile.in	2011-11-25 19:56:23.246205940 +0100
+Only in nspr-4.8.8-notimestamping/nspr/lib/prstreams: Makefile.in~
+diff -ru nspr-4.8.8/nspr/pr/src/Makefile.in nspr-4.8.8-notimestamping/nspr/pr/src/Makefile.in
+--- nspr-4.8.8/nspr/pr/src/Makefile.in	2010-10-13 02:52:53.000000000 +0200
++++ nspr-4.8.8-notimestamping/nspr/pr/src/Makefile.in	2011-11-25 19:56:23.246205940 +0100
 @@ -345,8 +345,8 @@
  endif
  
@@ -57,4 +57,4 @@ diff -ru nspr-4.8.8/mozilla/nsprpub/pr/src/Makefile.in nspr-4.8.8-notimestamping
  
  ifeq ($(NS_USE_GCC)_$(OS_ARCH),_WINNT)
  	SUF = i64
-Only in nspr-4.8.8-notimestamping/mozilla/nsprpub/pr/src: Makefile.in~
+Only in nspr-4.8.8-notimestamping/nspr/pr/src: Makefile.in~

@@ -1,7 +1,7 @@
-diff --git a/mozilla/nsprpub/configure.in b/mozilla/nsprpub/configure.in
+diff --git a/nspr/configure.in b/nspr/configure.in
 index 112ddd2..7b4fcae 100644
---- a/mozilla/nsprpub/configure.in
-+++ b/mozilla/nsprpub/configure.in
+--- a/nspr/configure.in
++++ b/nspr/configure.in
 @@ -1098,12 +1098,6 @@ no)
      thumb_flag="-marm"
      ;;

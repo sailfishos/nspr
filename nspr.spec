@@ -1,6 +1,6 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.9.6
+Version:        4.10
 Release:        1
 License:        MPLv1.1 or GPLv2+ or LGPLv2+
 URL:            http://www.mozilla.org/projects/nspr/
@@ -35,13 +35,13 @@ Header files for doing development with the Netscape Portable Runtime.
 # However, we need to use original nspr-config to produce some variables
 # that go into nspr.pc for pkg-config.
 
-cp ./mozilla/nsprpub/config/nspr-config.in ./mozilla/nsprpub/config/nspr-config-pc.in
+cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
 
 %build
-./mozilla/nsprpub/configure \
+./nspr/configure \
                  --prefix=%{_prefix} \
                  --libdir=%{_libdir} \
                  --includedir=%{_includedir}/nspr4 \

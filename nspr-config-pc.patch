@@ -1,7 +1,7 @@
-diff --git a/mozilla/nsprpub/config/nspr-config.in b/mozilla/nsprpub/config/nspr-config.in
+diff --git a/nspr/config/nspr-config.in b/nspr/config/nspr-config.in
 index a7d2b4f..2f441be 100755
---- a/mozilla/nsprpub/config/nspr-config.in
-+++ b/mozilla/nsprpub/config/nspr-config.in
+--- a/nspr/config/nspr-config.in
++++ b/nspr/config/nspr-config.in
 @@ -98,7 +98,7 @@ if test -z "$includedir"; then
      includedir=@includedir@
  fi
