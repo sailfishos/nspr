@@ -1,3 +1,10 @@
+* Fri Mar 14 2014 Davide Bettio <davide.bettio@ispirata.com> - 4.10.4
+- Update to version 4.10.4
+- Includes fix for CVE-2013-5607
+
+* Fri Jan 24 2014 Oleg Girko <oleg.girko@jolla.com> - 4.10-1
+- Add aarch64 support
+
 * Tue Jul 23 2013 Dmitry Rozhkov <dmitry.rozhkov@jollamobile.com> - 4.10
 - Update to version 4.10
 
