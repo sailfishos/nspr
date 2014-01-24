@@ -10,6 +10,7 @@ Source0:        https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v%{version
 Patch1:         nspr-config-pc.patch
 Patch2:         nspr-4.9-arm-dont-guess-thumb.patch
 Patch3:         nspr-4.8.8-notimestamping.patch
+Patch4:         nspr-aarch64.patch
 
 %description
 NSPR provides platform independence for non-GUI operating system 
@@ -39,13 +40,14 @@ cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 ./nspr/configure \
                  --prefix=%{_prefix} \
                  --libdir=%{_libdir} \
                  --includedir=%{_includedir}/nspr4 \
-%ifarch x86_64 ppc64 ia64 s390x sparc64
+%ifarch x86_64 ppc64 ia64 s390x sparc64 aarch64
                  --enable-64bit \
 %endif
 %ifarch armv7thl armv7tnhl
