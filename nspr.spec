@@ -1,6 +1,6 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.10.4
+Version:        4.10.6
 Release:        1
 License:        MPLv1.1 or GPLv2+ or LGPLv2+
 URL:            http://www.mozilla.org/projects/nspr/
@@ -10,7 +10,6 @@ Source0:        https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v%{version
 Patch1:         nspr-config-pc.patch
 Patch2:         nspr-4.9-arm-dont-guess-thumb.patch
 Patch3:         nspr-4.8.8-notimestamping.patch
-Patch4:         nspr-aarch64.patch
 
 %description
 NSPR provides platform independence for non-GUI operating system 
@@ -40,7 +39,6 @@ cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 ./nspr/configure \

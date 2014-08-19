@@ -1,3 +1,7 @@
+* Tue Aug 19 2014 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 4.10.6
+- Update to version 4.10.6
+- Includes fix for CVE-2014-1545
+
 * Fri Mar 14 2014 Davide Bettio <davide.bettio@ispirata.com> - 4.10.4
 - Update to version 4.10.4
 - Includes fix for CVE-2013-5607
