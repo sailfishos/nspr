@@ -1,3 +1,7 @@
+* Wed Nov 04 2015 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 4.10.10
+- Update to 4.10.10
+- Fixes CVE-2015-7183. Contributes to MER#1407
+
 * Thu Aug 20 2015 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 4.10.9
 - Update to version 4.10.9. Contributes to MER#1254
 
