@@ -52,7 +52,8 @@ cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
                  --enable-thumb2 \
 %endif
                  --enable-optimize="$RPM_OPT_FLAGS" \
-                 --disable-debug
+                 --disable-debug \
+                 --disable-static
 
 make
 
