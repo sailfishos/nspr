@@ -1,6 +1,6 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.17
+Version:        4.20
 Release:        1
 License:        MPLv1.1 or GPLv2+ or LGPLv2+
 URL:            http://www.mozilla.org/projects/nspr/
@@ -12,9 +12,9 @@ Patch2:         nspr-4.9-arm-dont-guess-thumb.patch
 Patch3:         nspr-4.8.8-notimestamping.patch
 
 %description
-NSPR provides platform independence for non-GUI operating system 
-facilities. These facilities include threads, thread synchronization, 
-normal file and network I/O, interval timing and calendar time, basic 
+NSPR provides platform independence for non-GUI operating system
+facilities. These facilities include threads, thread synchronization,
+normal file and network I/O, interval timing and calendar time, basic
 memory management (malloc and free) and shared library linking.
 
 %package devel
@@ -30,7 +30,7 @@ Header files for doing development with the Netscape Portable Runtime.
 
 # Original nspr-config is not suitable for our distribution,
 # because on different platforms it contains different dynamic content.
-# Therefore we produce an adjusted copy of nspr-config that will be 
+# Therefore we produce an adjusted copy of nspr-config that will be
 # identical on all platforms.
 # However, we need to use original nspr-config to produce some variables
 # that go into nspr.pc for pkg-config.
@@ -86,4 +86,3 @@ make
 %{_includedir}/nspr4
 %{_libdir}/pkgconfig/nspr.pc
 %{_bindir}/nspr-config
-
