@@ -1,8 +1,7 @@
-diff --git a/nspr/config/nspr-config.in b/nspr/config/nspr-config.in
-index a7d2b4f..2f441be 100755
---- a/nspr/config/nspr-config.in
-+++ b/nspr/config/nspr-config.in
-@@ -98,7 +98,7 @@ if test -z "$includedir"; then
+diff -up nspr/config/nspr-config.in.flags nspr/config/nspr-config.in
+--- nspr/config/nspr-config.in.flags	2013-05-29 13:46:34.147971410 -0700
++++ nspr/config/nspr-config.in	2013-05-29 14:17:10.990838914 -0700
+@@ -102,7 +102,7 @@ if test -z "$includedir"; then
      includedir=@includedir@
  fi
  if test -z "$libdir"; then
@@ -11,7 +10,7 @@ index a7d2b4f..2f441be 100755
  fi
  
  if test "$echo_prefix" = "yes"; then
-@@ -132,12 +132,12 @@ if test "$echo_libs" = "yes"; then
+@@ -136,12 +136,12 @@ if test "$echo_libs" = "yes"; then
        if test -n "$lib_nspr"; then
  	libdirs="$libdirs -lnspr${major_version}"
        fi
@@ -26,3 +25,15 @@ index a7d2b4f..2f441be 100755
 +      echo $libdirs `pkg-config --variable=os_libs nspr`
  fi      
  
+diff -up nspr/config/nspr.pc.in.flags nspr/config/nspr.pc.in
+--- nspr/config/nspr.pc.in.flags	2013-05-29 13:48:15.026643570 -0700
++++ nspr/config/nspr.pc.in	2013-05-29 13:49:47.795202949 -0700
+@@ -5,6 +5,6 @@ includedir=@includedir@
+ 
+ Name: NSPR
+ Description: The Netscape Portable Runtime
+-Version: @MOD_MAJOR_VERSION@.@MOD_MINOR_VERSION@.@MOD_PATCH_VERSION@
+-Libs: -L@libdir@ -lplds@MOD_MAJOR_VERSION@ -lplc@MOD_MAJOR_VERSION@ -lnspr@MOD_MAJOR_VERSION@
++Version: @MOD_MAJOR_VERSION@.@MOD_MINOR_VERSION@
++Libs: -L@libdir@ -lplds@MOD_MAJOR_VERSION@ -lplc@MOD_MAJOR_VERSION@ -lnspr@MOD_MAJOR_VERSION@ @OS_LIBS@
+ Cflags: -I@includedir@

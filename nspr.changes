@@ -1,3 +1,7 @@
+* Fri Dec 28 2018 Marko Kenttälä <marko.kenttala@jolla.com> - 4.20
+- Update to 4.20, contributes to jb#36180
+- Fedora spec file used as a base
+
 * Wed Nov 22 2017 Raine Mäkeläinen <raine.makelainen@jolla.com> - 4.17
 - Update to 4.17. Fixes MER#1856
 
@@ -52,17 +56,17 @@
   - Added new patch nspr-4.8.8-arm-donthardcodecflags.patch
 
 * Mon Jul 04 2011 Carsten Munk <carsten@maemo.org> - 4.8.7
-- Hardcoding CFLAGS for armv7hl is bad, caused build failure. 
-  Patched away armv5tel manual setting in configure and configure.in. 
+- Hardcoding CFLAGS for armv7hl is bad, caused build failure.
+  Patched away armv5tel manual setting in configure and configure.in.
   While this is dirty, it is due to nspr not surviving a autoconf run.
 
 * Wed Mar 02 2011 Jian-feng Ding <jian-feng.ding@intel.com> - 4.8.7
 - Update to 4.8.7 to meet fennec requirement, fixed #BMC13425
 
-* Tue 16 Nov 2010 Stephan Binner <stephan.binner@basyskom.de> 4.8.6
+* Tue Nov 16 2010 Stephan Binner <stephan.binner@basyskom.de> - 4.8.6
 - Update to 4.8.6 as requirement for fennec-qt, BMC#10122
 
-* Fri Jan 29 2010 Jian-feng Ding <jian-feng.ding@intel.com> 4.8.2
+* Fri Jan 29 2010 Jian-feng Ding <jian-feng.ding@intel.com> - 4.8.2
 - Update to 4.8.2
   Will not convert it to spectacle until now. Though the origin
   spec is very clean and easy to be converted. The problem is the
@@ -175,7 +179,7 @@
 * Tue Feb 07 2006 Jesse Keating <jkeating@redhat.com> - 4.6.1-2.1
 - rebuilt for new gcc4.1 snapshot and glibc changes
 
-* Thu Jan  5 2006 Kai Engert <kengert@redhat.com> 4.6.1-2
+* Thu Jan  5 2006 Kai Engert <kengert@redhat.com> - 4.6.1-2
 - Do not use -ansi when compiling, because of a compilation
   problem with latest glibc and anonymous unions.
   See also bugzilla.mozilla.org # 322427.
@@ -187,29 +191,29 @@
 - Stop shipping static libraries; NSS and dependencies no longer
   require static libraries to build.
 
-* Thu Dec 15 2005 Christopher Aillon <caillon@redhat.com> 4.6.1-1
+* Thu Dec 15 2005 Christopher Aillon <caillon@redhat.com> - 4.6.1-1
 - Update to 4.6.1
 
 * Fri Dec 09 2005 Jesse Keating <jkeating@redhat.com>
 - rebuilt
 
-* Fri Jul 15 2005 Christopher Aillon <caillon@redhat.com> 4.6-4
+* Fri Jul 15 2005 Christopher Aillon <caillon@redhat.com> - 4.6-4
 - Use the NSPR version numbering scheme reported by NSPR,
   which unfortunately is not exactly the same as the real
   version (4.6 != 4.6.0 according to RPM and pkgconfig).
 
-* Fri Jul 15 2005 Christopher Aillon <caillon@redhat.com> 4.6-3
+* Fri Jul 15 2005 Christopher Aillon <caillon@redhat.com> - 4.6-3
 - Correct the CFLAGS reported by pkgconfig
 
-* Tue Jul 12 2005 Christopher Aillon <caillon@redhat.com> 4.6-2
-- Temporarily include the static libraries allowing nss and 
-  its dependencies to build. 
+* Tue Jul 12 2005 Christopher Aillon <caillon@redhat.com> - 4.6-2
+- Temporarily include the static libraries allowing nss and
+  its dependencies to build.
 
-* Tue Jul 12 2005 Christopher Aillon <caillon@redhat.com> 4.6-1
+* Tue Jul 12 2005 Christopher Aillon <caillon@redhat.com> - 4.6-1
 - Update to NSPR 4.6
 
-* Wed Apr 20 2005 Christopher Aillon <caillon@redhat.com> 4.4.1-2
+* Wed Apr 20 2005 Christopher Aillon <caillon@redhat.com> - 4.4.1-2
 - NSPR doesn't have make install, but it has make real_install.  Use it.
 
-* Thu Apr 14 2005 Christopher Aillon <caillon@redhat.com> 4.4.1-1
+* Thu Apr 14 2005 Christopher Aillon <caillon@redhat.com> - 4.4.1-1
 - Let's make an RPM.
