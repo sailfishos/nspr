@@ -1,3 +1,6 @@
+* Tue Jan 15 2019 Marko Kenttälä <marko.kenttala@jolla.com> - 4.20.0-1
+- Version numbering fix, contributes to jb#36180
+
 * Fri Dec 28 2018 Marko Kenttälä <marko.kenttala@jolla.com> - 4.20
 - Update to 4.20, contributes to jb#36180
 - Fedora spec file used as a base
