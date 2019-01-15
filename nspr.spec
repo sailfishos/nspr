@@ -1,4 +1,4 @@
-%global nspr_version 4.20
+%global nspr_version 4.20.0
 
 # The upstream omits the trailing ".0", while we need it for
 # consistency with the pkg-config version:
