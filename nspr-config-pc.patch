@@ -28,12 +28,10 @@ diff -up nspr/config/nspr-config.in.flags nspr/config/nspr-config.in
 diff -up nspr/config/nspr.pc.in.flags nspr/config/nspr.pc.in
 --- nspr/config/nspr.pc.in.flags	2013-05-29 13:48:15.026643570 -0700
 +++ nspr/config/nspr.pc.in	2013-05-29 13:49:47.795202949 -0700
-@@ -5,6 +5,6 @@ includedir=@includedir@
- 
+@@ -6,5 +6,5 @@ includedir=@includedir@
  Name: NSPR
  Description: The Netscape Portable Runtime
--Version: @MOD_MAJOR_VERSION@.@MOD_MINOR_VERSION@.@MOD_PATCH_VERSION@
+ Version: @MOD_MAJOR_VERSION@.@MOD_MINOR_VERSION@.@MOD_PATCH_VERSION@
 -Libs: -L@libdir@ -lplds@MOD_MAJOR_VERSION@ -lplc@MOD_MAJOR_VERSION@ -lnspr@MOD_MAJOR_VERSION@
-+Version: @MOD_MAJOR_VERSION@.@MOD_MINOR_VERSION@
 +Libs: -L@libdir@ -lplds@MOD_MAJOR_VERSION@ -lplc@MOD_MAJOR_VERSION@ -lnspr@MOD_MAJOR_VERSION@ @OS_LIBS@
  Cflags: -I@includedir@
