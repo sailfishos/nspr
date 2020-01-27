@@ -1,4 +1,4 @@
-%global nspr_version 4.20.0
+%global nspr_version 4.24.0
 
 # The upstream omits the trailing ".0", while we need it for
 # consistency with the pkg-config version:
@@ -10,11 +10,10 @@ rpm.define(string.format("nspr_archive_version %s",
 
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        %{nspr_version}
-Release:        3%{?dist}
+Version:        %{nspr_version}+git1
+Release:        1
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
-Group:          System Environment/Libraries
 
 # Sources available at ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/
 # When hg tag based snapshots are being used, refer to hg documentation on
@@ -22,6 +21,7 @@ Group:          System Environment/Libraries
 Source0:        %{name}-%{nspr_archive_version}.tar.gz
 
 Patch1:         nspr-config-pc.patch
+Patch2:         nspr-gcc-atomics.patch
 
 %description
 NSPR provides platform independence for non-GUI operating system
@@ -31,7 +31,6 @@ memory management (malloc and free) and shared library linking.
 
 %package devel
 Summary:        Development libraries for the Netscape Portable Runtime
-Group:          Development/Libraries
 Requires:       nspr = %{version}-%{release}
 Requires:       pkgconfig
 
@@ -39,7 +38,6 @@ Requires:       pkgconfig
 Header files for doing development with the Netscape Portable Runtime.
 
 %prep
-
 %setup -q -n %{name}-%{nspr_archive_version}
 
 # Original nspr-config is not suitable for our distribution,
@@ -51,6 +49,9 @@ Header files for doing development with the Netscape Portable Runtime.
 
 cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
 %patch1 -p0 -b .flags
+pushd nspr
+%patch2 -p1 -b .gcc-atomics
+popd
 
 %build
 ./nspr/configure \
@@ -71,7 +72,6 @@ cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
 make
 
 %check
-
 # Run test suite.
 perl ./nspr/pr/tests/runtests.pl 2>&1 | tee output.log
 
@@ -83,7 +83,6 @@ fi
 echo "test suite completed"
 
 %install
-
 %{__rm} -Rf $RPM_BUILD_ROOT
 
 DESTDIR=$RPM_BUILD_ROOT \
