@@ -1,3 +1,6 @@
+* Tue Oct 13 2020 Mikhail Labiuk <m.labyuk@omprussia.ru> - 4.29.0+git1
+- Upgrade to 4.29.0, contributes to JB#51592
+
 * Mon Jan 20 2020 Marko Lemmetty <marko.lemmetty@jolla.com> - 4.24.0+git1
 - Update to 4.24.0, contributes to jb#48386
 
