@@ -1,4 +1,4 @@
-%global nspr_version 4.24.0
+%global nspr_version 4.29.0
 
 # The upstream omits the trailing ".0", while we need it for
 # consistency with the pkg-config version:
@@ -23,6 +23,8 @@ Source0:        %{name}-%{nspr_archive_version}.tar.gz
 Patch1:         nspr-config-pc.patch
 Patch2:         nspr-gcc-atomics.patch
 
+BuildRequires:  perl
+
 %description
 NSPR provides platform independence for non-GUI operating system
 facilities. These facilities include threads, thread synchronization,
@@ -32,7 +34,6 @@ memory management (malloc and free) and shared library linking.
 %package devel
 Summary:        Development libraries for the Netscape Portable Runtime
 Requires:       nspr = %{version}-%{release}
-Requires:       pkgconfig
 
 %description devel
 Header files for doing development with the Netscape Portable Runtime.
@@ -69,7 +70,7 @@ popd
                  --enable-optimize="$RPM_OPT_FLAGS" \
                  --disable-debug
 
-make
+%make_build
 
 %check
 # Run test suite.
@@ -83,37 +84,25 @@ fi
 echo "test suite completed"
 
 %install
-%{__rm} -Rf $RPM_BUILD_ROOT
-
-DESTDIR=$RPM_BUILD_ROOT \
-  make install
-
-NSPR_LIBS=`./config/nspr-config --libs`
-NSPR_CFLAGS=`./config/nspr-config --cflags`
-NSPR_VERSION=`./config/nspr-config --version`
-%{__mkdir_p} $RPM_BUILD_ROOT/%{_libdir}/pkgconfig
-
-# Get rid of the things we don't want installed (per upstream)
-%{__rm} -rf \
-   $RPM_BUILD_ROOT/%{_bindir}/compile-et.pl \
-   $RPM_BUILD_ROOT/%{_bindir}/prerr.properties \
-   $RPM_BUILD_ROOT/%{_libdir}/libnspr4.a \
-   $RPM_BUILD_ROOT/%{_libdir}/libplc4.a \
-   $RPM_BUILD_ROOT/%{_libdir}/libplds4.a \
-   $RPM_BUILD_ROOT/%{_datadir}/aclocal/nspr.m4 \
-   $RPM_BUILD_ROOT/%{_includedir}/nspr4/md
+%{__rm} -Rf %{buildroot}
+%make_install
 
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 %files
+%defattr(-,root,root,-)
 %license nspr/LICENSE
 %{_libdir}/libnspr4.so
 %{_libdir}/libplc4.so
 %{_libdir}/libplds4.so
 
 %files devel
+%defattr(-,root,root,-)
 %{_includedir}/nspr4
 %{_libdir}/pkgconfig/nspr.pc
+%{_datadir}/aclocal/nspr.m4
 %{_bindir}/nspr-config
+%exclude %{_bindir}/compile-et.pl
+%exclude %{_bindir}/prerr.properties
