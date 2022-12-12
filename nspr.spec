@@ -55,6 +55,9 @@ pushd nspr
 popd
 
 %build
+# set buildtime to "last-modification-time"
+BUILD_STRING="$(date -u -d "@${SOURCE_DATE_EPOCH}" "+%%F %%T")"
+BUILD_TIME="$(date -u -d "@${SOURCE_DATE_EPOCH}" "+%%s000000")"
 ./nspr/configure \
                  --prefix=%{_prefix} \
                  --libdir=%{_libdir} \
@@ -70,7 +73,7 @@ popd
                  --enable-optimize="$RPM_OPT_FLAGS" \
                  --disable-debug
 
-%make_build
+%make_build SH_DATE="$BUILD_STRING" SH_NOW="$BUILD_TIME"
 
 %check
 # Run test suite.
