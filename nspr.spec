@@ -10,7 +10,7 @@ rpm.define(string.format("nspr_archive_version %s",
 
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        %{nspr_version}+git1
+Version:        %{nspr_version}+git2
 Release:        1
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
