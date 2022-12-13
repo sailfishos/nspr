@@ -1,3 +1,6 @@
+* Mon Dec 12 2022 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.29.0+git2
+- Set build time based on changelog. Fixes JB#59611
+
 * Tue Oct 13 2020 Mikhail Labiuk <m.labyuk@omprussia.ru> - 4.29.0+git1
 - Upgrade to 4.29.0, contributes to JB#51592
 
