@@ -1,7 +1,7 @@
 diff --git a/pr/include/md/_linux.h b/pr/include/md/_linux.h
 --- a/pr/include/md/_linux.h
 +++ b/pr/include/md/_linux.h
-@@ -82,53 +82,73 @@
+@@ -100,53 +100,73 @@
  #define NO_DLOPEN_NULL
  #endif
  
@@ -68,7 +68,7 @@ diff --git a/pr/include/md/_linux.h b/pr/include/md/_linux.h
  #endif
 +#endif
  
- #if defined(__or1k__)
+ #if defined(__loongarch__)
  #if defined(__GNUC__)
  /* Use GCC built-in functions */
  #define _PR_HAVE_ATOMIC_OPS

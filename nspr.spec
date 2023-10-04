@@ -1,4 +1,4 @@
-%global nspr_version 4.29.0
+%global nspr_version 4.35.0
 
 # The upstream omits the trailing ".0", while we need it for
 # consistency with the pkg-config version:
@@ -10,7 +10,7 @@ rpm.define(string.format("nspr_archive_version %s",
 
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        %{nspr_version}+git2
+Version:        %{nspr_version}+git1
 Release:        1
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
