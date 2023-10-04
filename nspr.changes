@@ -1,3 +1,6 @@
+* Thu Oct 05 2023 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.35.0+git1
+- Upgrade to 4.35.0. JB#61045
+
 * Mon Dec 12 2022 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.29.0+git2
 - Set build time based on changelog. Fixes JB#59611
 
