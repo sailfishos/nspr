@@ -87,8 +87,9 @@ fi
 echo "test suite completed"
 
 %install
-%{__rm} -Rf %{buildroot}
 %make_install
+
+find %{buildroot} -name \*.a -delete
 
 %post -p /sbin/ldconfig
 
