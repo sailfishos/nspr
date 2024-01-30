@@ -1,3 +1,6 @@
+* Mon Jan 08 2024 Björn Bidar <bjorn.bidar@thaodan.de> - 4.35.0+git1
+- Disable static libraries. JB#55344
+
 * Thu Oct 05 2023 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.35.0+git1
 - Upgrade to 4.35.0. JB#61045
 
