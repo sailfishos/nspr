@@ -1,4 +1,4 @@
-%global nspr_version 4.35.0
+%global nspr_version 4.37.0
 
 # The upstream omits the trailing ".0", while we need it for
 # consistency with the pkg-config version:
@@ -10,7 +10,7 @@ rpm.define(string.format("nspr_archive_version %s",
 
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        %{nspr_version}+git2
+Version:        %{nspr_version}+git1
 Release:        1
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
@@ -49,9 +49,9 @@ Header files for doing development with the Netscape Portable Runtime.
 # that go into nspr.pc for pkg-config.
 
 cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
-%patch1 -p0 -b .flags
+%patch -P 1 -p0 -b .flags
 pushd nspr
-%patch2 -p1 -b .gcc-atomics
+%patch -P 2 -p1 -b .gcc-atomics
 popd
 
 %build
@@ -96,14 +96,12 @@ find %{buildroot} -name \*.a -delete
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(-,root,root,-)
 %license nspr/LICENSE
 %{_libdir}/libnspr4.so
 %{_libdir}/libplc4.so
 %{_libdir}/libplds4.so
 
 %files devel
-%defattr(-,root,root,-)
 %{_includedir}/nspr4
 %{_libdir}/pkgconfig/nspr.pc
 %{_datadir}/aclocal/nspr.m4

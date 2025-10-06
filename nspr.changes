@@ -1,3 +1,7 @@
+* Fri Oct 03 2025 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.37.0+git1
+- Update to 4.37.0. JB#63699
+- Use %patch -P N instead of %patchN in spec. JB#63645
+
 * Mon Jan 08 2024 Björn Bidar <bjorn.bidar@thaodan.de> - 4.35.0+git2
 - Disable static libraries. JB#55344
 
