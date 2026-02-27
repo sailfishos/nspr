@@ -1,3 +1,6 @@
+* Thu Feb 26 2026 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.38.2+git1
+- Update to 4.38.2. JB#63834
+
 * Fri Oct 03 2025 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.37.0+git1
 - Update to 4.37.0. JB#63699
 - Use %patch -P N instead of %patchN in spec. JB#63645
