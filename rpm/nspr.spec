@@ -1,24 +1,11 @@
-%global nspr_version 4.39
-
-# The upstream omits the trailing ".0", while we need it for
-# consistency with the pkg-config version:
-# https://bugzilla.redhat.com/show_bug.cgi?id=1578106
-%{lua:
-rpm.define(string.format("nspr_archive_version %s",
-           string.gsub(rpm.expand("%nspr_version"), "(.*)%.0$", "%1")))
-}
-
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        %{nspr_version}+git1
+Version:        4.39
 Release:        1
 License:        MPLv2.0
-URL:            http://www.mozilla.org/projects/nspr/
+URL:            https://github.com/sailfishos/nspr
 
-# Sources available at ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/
-# When hg tag based snapshots are being used, refer to hg documentation on
-# mozilla.org and check out subdirectory mozilla/nsprpub.
-Source0:        %{name}-%{nspr_archive_version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 Patch1:         nspr-config-pc.patch
 Patch2:         nspr-gcc-atomics.patch
@@ -39,7 +26,7 @@ Requires:       nspr = %{version}-%{release}
 Header files for doing development with the Netscape Portable Runtime.
 
 %prep
-%setup -q -n %{name}-%{nspr_archive_version}
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
 # Original nspr-config is not suitable for our distribution,
 # because on different platforms it contains different dynamic content.
@@ -48,17 +35,13 @@ Header files for doing development with the Netscape Portable Runtime.
 # However, we need to use original nspr-config to produce some variables
 # that go into nspr.pc for pkg-config.
 
-cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
-%patch -P 1 -p0 -b .flags
-pushd nspr
-%patch -P 2 -p1 -b .gcc-atomics
-popd
+cp ./config/nspr-config.in ./config/nspr-config-pc.in
 
 %build
 # set buildtime to "last-modification-time"
-BUILD_STRING="$(date -u -d "@${SOURCE_DATE_EPOCH}" "+%%F %%T")"
-BUILD_TIME="$(date -u -d "@${SOURCE_DATE_EPOCH}" "+%%s000000")"
-./nspr/configure \
+BUILD_STRING="$(date -u -d "@${SOURCE_DATE_EPOCH:-$(date +%s)}" "+%%F %%T")"
+BUILD_TIME="$(date -u -d "@${SOURCE_DATE_EPOCH:-$(date +%s)}" "+%%s000000")"
+./configure \
                  --prefix=%{_prefix} \
                  --libdir=%{_libdir} \
                  --includedir=%{_includedir}/nspr4 \
@@ -96,7 +79,7 @@ find %{buildroot} -name \*.a -delete
 %postun -p /sbin/ldconfig
 
 %files
-%license nspr/LICENSE
+%license LICENSE
 %{_libdir}/libnspr4.so
 %{_libdir}/libplc4.so
 %{_libdir}/libplds4.so
