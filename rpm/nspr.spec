@@ -1,24 +1,11 @@
-%global nspr_version 4.39
-
-# The upstream omits the trailing ".0", while we need it for
-# consistency with the pkg-config version:
-# https://bugzilla.redhat.com/show_bug.cgi?id=1578106
-%{lua:
-rpm.define(string.format("nspr_archive_version %s",
-           string.gsub(rpm.expand("%nspr_version"), "(.*)%.0$", "%1")))
-}
-
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        %{nspr_version}+git1
+Version:        4.39
 Release:        1
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
 
-# Sources available at ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/
-# When hg tag based snapshots are being used, refer to hg documentation on
-# mozilla.org and check out subdirectory mozilla/nsprpub.
-Source0:        %{name}-%{nspr_archive_version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 Patch1:         nspr-config-pc.patch
 Patch2:         nspr-gcc-atomics.patch
@@ -39,7 +26,7 @@ Requires:       nspr = %{version}-%{release}
 Header files for doing development with the Netscape Portable Runtime.
 
 %prep
-%setup -q -n %{name}-%{nspr_archive_version}
+%setup -q -n %{name}-%{version}
 
 # Original nspr-config is not suitable for our distribution,
 # because on different platforms it contains different dynamic content.

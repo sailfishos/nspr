@@ -1,5 +1,6 @@
 * Tue Aug 18 2026 Andrew Branson <andrew.branson@jolla.com> - 4.39+git1
-- Update to 4.39.
+- Update to 4.39. Contributes to JB#64963
+- Switch to tar_git packaging.
 
 * Thu Feb 26 2026 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.38.2+git1
 - Update to 4.38.2. JB#63834
