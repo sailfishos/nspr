@@ -26,7 +26,7 @@ Requires:       nspr = %{version}-%{release}
 Header files for doing development with the Netscape Portable Runtime.
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
 # Original nspr-config is not suitable for our distribution,
 # because on different platforms it contains different dynamic content.
@@ -35,17 +35,13 @@ Header files for doing development with the Netscape Portable Runtime.
 # However, we need to use original nspr-config to produce some variables
 # that go into nspr.pc for pkg-config.
 
-cp ./nspr/config/nspr-config.in ./nspr/config/nspr-config-pc.in
-%patch -P 1 -p0 -b .flags
-pushd nspr
-%patch -P 2 -p1 -b .gcc-atomics
-popd
+cp ./config/nspr-config.in ./config/nspr-config-pc.in
 
 %build
 # set buildtime to "last-modification-time"
-BUILD_STRING="$(date -u -d "@${SOURCE_DATE_EPOCH}" "+%%F %%T")"
-BUILD_TIME="$(date -u -d "@${SOURCE_DATE_EPOCH}" "+%%s000000")"
-./nspr/configure \
+BUILD_STRING="$(date -u -d "@${SOURCE_DATE_EPOCH:-$(date +%s)}" "+%%F %%T")"
+BUILD_TIME="$(date -u -d "@${SOURCE_DATE_EPOCH:-$(date +%s)}" "+%%s000000")"
+./configure \
                  --prefix=%{_prefix} \
                  --libdir=%{_libdir} \
                  --includedir=%{_includedir}/nspr4 \
@@ -83,7 +79,7 @@ find %{buildroot} -name \*.a -delete
 %postun -p /sbin/ldconfig
 
 %files
-%license nspr/LICENSE
+%license LICENSE
 %{_libdir}/libnspr4.so
 %{_libdir}/libplc4.so
 %{_libdir}/libplds4.so
